@@ -4,7 +4,7 @@ LPP++ je rozšířené kódování užitečného zatížení dosavadního Cayenn
 
 ### Změny
 
-v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy
+v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy (HEX = 87)
 
 ### Rozšířená tabulka
 
