@@ -2,11 +2,11 @@
 
 LPP++ je rozšířené kódování užitečného zatížení dosavadního Cayenne Low Power Packet (LPP) o vlastní senzory. Projekt obsahuje nový dekoder LPP packetu (JS) a nové rozšířené knihovny pro zakodování obsahu do LPP formátu. 
 
-## Změny
+### Změny
 
 v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy
 
-## Rozšířená tabulka
+### Rozšířená tabulka
 
 <table style="width: 100%;">
 <tbody>
@@ -119,6 +119,14 @@ v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy
 </tr>
 <tr>
 <td>Altitude : 0.01 meter Signed MSB</td>
+</tr>
+<tr>
+  <td>Gyrometer</td>
+  <td>3334</td>
+  <td>134</td>
+  <td>86</td>
+  <td>6</td>
+  <td>0.01 °/s Signed MSB per axis</td>
 </tr>
 </tbody>
 </table>
