@@ -121,12 +121,12 @@ v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy
 <td>Altitude : 0.01 meter Signed MSB</td>
 </tr>
 <tr>
-  <td>Gyrometer</td>
-  <td>3334</td>
-  <td>134</td>
-  <td>86</td>
-  <td>6</td>
-  <td>0.01 °/s Signed MSB per axis</td>
+  <td>Soil Moisture</td>
+  <td>???</td>
+  <td>135</td>
+  <td>87</td>
+  <td>1</td>
+  <td>0.5 % Unsigned</td>
 </tr>
 </tbody>
 </table>
