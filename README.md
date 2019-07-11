@@ -122,11 +122,11 @@ v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy (HEX = 87)
 </tr>
   
 <tr>
-  <td rowspan="3">GPS Location (extended)</td>
-  <td rowspan="3">???</td>
-  <td rowspan="3">137</td>
-  <td rowspan="3">89</td>
-  <td rowspan="3">18</td>
+  <td rowspan="6">GPS Location (extended)</td>
+  <td rowspan="6">???</td>
+  <td rowspan="6">137</td>
+  <td rowspan="6">89</td>
+  <td rowspan="6">18</td>
   <td>Latitude : 0.0001 ° Signed MSB (3Byte)</td>
 </tr>
 <tr>
