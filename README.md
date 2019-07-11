@@ -1,6 +1,6 @@
-# LPP++
+# LPP+
 
-LPP++ je rozšířené kódování užitečného zatížení dosavadního Cayenne Low Power Packet (LPP) o vlastní senzory. Projekt obsahuje nový dekoder LPP packetu (JS) a nové rozšířené knihovny pro zakodování obsahu do LPP formátu. 
+LPP+ je rozšířené kódování užitečného zatížení dosavadního Cayenne Low Power Packet (LPP) o vlastní senzory. Projekt obsahuje nový dekoder LPP packetu (JS) a nové rozšířené knihovny pro zakodování obsahu do LPP formátu. 
 
 ### Změny
 
@@ -120,6 +120,31 @@ v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy (HEX = 87)
 <tr>
 <td>Altitude : 0.01 meter Signed MSB</td>
 </tr>
+  
+<tr>
+  <td rowspan="3">GPS Location (extended)</td>
+  <td rowspan="3">???</td>
+  <td rowspan="3">137</td>
+  <td rowspan="3">89</td>
+  <td rowspan="3">18</td>
+  <td>Latitude : 0.0001 ° Signed MSB (3Byte)</td>
+</tr>
+<tr>
+  <td>Longitude : 0.0001 ° Signed MSB (3Byte)</td>
+</tr>
+<tr>
+  <td>Altitude : 0.01 meter Signed MSB (3Byte)</td>
+</tr>
+<tr>
+  <td>Satellites : 1 satelite Unsigned (1Byte)</td>
+</tr>
+<tr>
+  <td>Speed : 0.01 meter Unsigned (2Byte)</td>
+</tr>
+<tr>
+  <td>TimeStamp : 1 ms Unsigned (6Byte)</td>
+</tr>
+
 <tr>
   <td>Soil Moisture</td>
   <td>???</td>
