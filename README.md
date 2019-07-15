@@ -99,6 +99,15 @@ v1.0 - 9.7.2019 - přidán senzor vlhkosti půdy (HEX = 87)
 <td>0.1 hPa Unsigned MSB</td>
 </tr>
 <tr>
+<tr>
+<td>Unix Time</td>
+<td>???</td>
+<td>133</td>
+<td>85</td>
+<td>4</td>
+<td>1 sec Unsigned</td>
+</tr>
+<tr>
 <td>Gyrometer</td>
 <td>3334</td>
 <td>134</td>
