@@ -8,7 +8,6 @@ function Decoder(bytes, port) {
 
     var decimalValue = 0; // inicializace proměnné decimalValue, do které se bude ukládat výsledky převaděného HEX na DECimal
        
-    
     for(var i = dataSize - 1; i >= 0; i--){ // cyklus for projíždí jednotlivé byty a převádí je na decimální číslo.
               
       decimalValue += bytes[bytesPosition++] << i*8; // bitový posun dle velikosti 
