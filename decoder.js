@@ -96,8 +96,8 @@ function Decoder(bytes, port) {
     115: {'size': 2  , 'name': 'Barometer'          , 'signed': false , 'resolution': 0.1                             },
     133: {'size': 4  , 'name': 'UnixTime'           , 'signed': true  , 'resolution': 0.01                            },
     134: {'size': 6  , 'name': 'Gyrometer'          , 'signed': true  , 'resolution': 0.01                            },
-    136: {'size': 9  , 'name': 'GPS Location'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01]          },
-    137: {'size': 16 , 'name': 'GPS Location'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01, 1, 1, 1] }
+    136: {'size': 9  , 'name': 'gps'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01]          },
+    137: {'size': 16 , 'name': 'gps'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01, 1, 1, 1] }
   };
   
   // Bude pročítat celý payload byte po byte, dokud nenarazí na konec 
