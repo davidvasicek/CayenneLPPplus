@@ -1,4 +1,4 @@
-# LPP+
+# CayenneLPP+
 
 Cayenne LPP+ (Low Power Packet) je rozšíření dosavadního [Cayenne LPP](https://mydevices.com/cayenne/docs/lora/#lora-how-lorawan-works) vlastní senzory. Formát kódování umožňuje jednoduchý a pohodlnný způsob odesílání dat v sítích LoRaWAN s co nejmenší velikosti užitečného zatížení.
 
@@ -206,20 +206,21 @@ uint8_t addAccelerometer(uint8_t channel, float x, float y, float z);
 uint8_t addBarometricPressure(uint8_t channel, float hpa);
 uint8_t addGyrometer(uint8_t channel, float x, float y, float z);
 uint8_t addGPS(uint8_t channel, float latitude, float longitude, float meters);
-uint8_t addGPS+(uint8_t channel, float latitude, float longitude, float meters, int satellites, float speed, long timestamp);
+uint8_t addGPSplus(uint8_t channel, float latitude, float longitude, float meters, int satellites, float speed, long timestamp);
 ```
 
 ##### implementace knihovny
 
 1. Stáhněte knihovnu kliknutím na Clone or download -> Download ZIP.
-2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> LPPplus-master.zip
+2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> CayenneLPPplus-master.zip
 3. Použíjte knihovnu
+
     ```c
-      #include <CayenneLPP.h>
+      #include <CayenneLPP+.h>
       CayenneLPP lpp(80);
 
       lpp.reset();
-      lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
+      lpp.addGPSplus(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
 
       LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
     ```
