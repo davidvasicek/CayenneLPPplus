@@ -2,7 +2,7 @@
 
 Cayenne LPP+ (Low Power Packet) je rozšíření dosavadního [Cayenne LPP](https://mydevices.com/cayenne/docs/lora/#lora-how-lorawan-works) vlastní senzory. Formát kódování umožňuje jednoduchý a pohodlnný způsob odesílání dat v sítích LoRaWAN s co nejmenší velikosti užitečného zatížení.
 
-Tento projekt vytváří nový dekodér takového zatížení a rozšířenou knihovnu [CayenneLPP](https://github.com/TheThingsNetwork/arduino-device-lib).
+Tento projekt vytváří nový dekodér takového zatížení a rozšířenou knihovnu [CayenneLPP](https://github.com/TheThingsNetwork/arduino-device-lib) pro kódování tohoto užitečného zatížení.
 
 ### Změny ve verzích
 
@@ -170,4 +170,23 @@ v1.0.0 - 16.7.2019 - přidána rozšířená GPS (HEX = 89)
 
 
 ### decoder
+
+Dekoder LPP packetu je kód v jazyce Javascript implementovatelný do [The Things Network](https://www.thethingsnetwork.org/) (TTN) a jeho úkolem je dekódování užitečného zatížení zakodováného knihovnou CayenneLPP
+
+##### implementace dekodéru
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+
+![decoder implement][https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png]
+
+
+
+
+Dekoder LPP packetu (JS) a nové rozšířené knihovny pro zakodování obsahu do LPP formátu. 
 
