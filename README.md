@@ -189,18 +189,36 @@ Dekoder LPP packetu je kód v jazyce Javascript a je implementovatelný do [The 
 
 Knihovna LPP+ je rozšíření knihovny CayenneLPP od The Things Network a implementuje do této knihovny nové senzory. Knihovna je psana v jazyce C. Při použití knihovny doporučujeme zkontrolovat aktuální verze knihovny, která se stále vyvíjí.
 
+##### metody knihovny
+
+```c
+uint8_t addDigitalInput(uint8_t channel, uint8_t value);
+uint8_t addDigitalOutput(uint8_t channel, uint8_t value);
+uint8_t addAnalogInput(uint8_t channel, float value);
+uint8_t addAnalogOutput(uint8_t channel, float value);
+uint8_t addLuminosity(uint8_t channel, uint16_t lux);
+uint8_t addPresence(uint8_t channel, uint8_t value);
+uint8_t addTemperature(uint8_t channel, float celsius);
+uint8_t addRelativeHumidity(uint8_t channel, float rh);
+uint8_t addAccelerometer(uint8_t channel, float x, float y, float z);
+uint8_t addBarometricPressure(uint8_t channel, float hpa);
+uint8_t addGyrometer(uint8_t channel, float x, float y, float z);
+uint8_t addGPS(uint8_t channel, float latitude, float longitude, float meters);
+uint8_t addGPS+(uint8_t channel, float latitude, float longitude, float meters, int satellites, float speed, long timestamp);
+```
+
 ##### implementace knihovny
 
 1. Stáhněte knihovnu kliknutím na Clone or download -> Download ZIP.
 2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> LPPplus-master.zip
 3. Použíjte knihovnu
-```javascript
+```c
 
 #include <CayenneLPP.h>
 CayenneLPP lpp(80);
 
 lpp.reset();
-lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp); //add the temperature into channel 1
+lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
 
 LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
 ```
