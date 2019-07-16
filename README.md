@@ -215,7 +215,6 @@ uint8_t addGPS+(uint8_t channel, float latitude, float longitude, float meters, 
 2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> LPPplus-master.zip
 3. Použíjte knihovnu
     ```c
-
       #include <CayenneLPP.h>
       CayenneLPP lpp(80);
 
@@ -223,4 +222,4 @@ uint8_t addGPS+(uint8_t channel, float latitude, float longitude, float meters, 
       lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
 
       LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
-  ```
+    ```
