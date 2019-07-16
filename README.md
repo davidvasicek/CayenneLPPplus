@@ -171,19 +171,17 @@ v1.0.0 - 16.7.2019 - přidána rozšířená GPS (HEX = 89)
 
 ### decoder
 
-Dekoder LPP packetu je kód v jazyce Javascript implementovatelný do [The Things Network](https://www.thethingsnetwork.org/) (TTN) a jeho úkolem je dekódování užitečného zatížení zakodováného knihovnou CayenneLPP
+Dekoder LPP packetu je kód v jazyce Javascript a je implementovatelný do [The Things Network](https://www.thethingsnetwork.org/) (TTN). Jeho úkolem je dekódování užitečného zatížení zakodováného knihovnou CayenneLPP.
 
 ##### implementace dekodéru
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-
-
+1. Ve vaší aplikaci přejděte do Payload Formats
+2. v Payload Format zvolte Custom
+3. zvolte decoder
+4. vložte kód dekodéru [Decoder.js](https://github.com/davidvasicek/LPPplus/blob/master/decoder.js)
+5. do Payload vložte testovací posloupnost bytů (např. 01 89 07 9A 87 02 C5 68 00 67 84 05 00 00 5D 2D 8D 0B)
+6. stiskněte Test
+7. sledujte výsledek
 
 ![alt text](https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png "Logo Title Text 1")
 
