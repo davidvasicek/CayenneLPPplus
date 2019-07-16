@@ -175,21 +175,32 @@ Dekoder LPP packetu je kód v jazyce Javascript a je implementovatelný do [The 
 
 ##### implementace dekodéru
 
-1. Ve vaší aplikaci přejděte do Payload Formats
-2. v Payload Format zvolte Custom
-3. zvolte decoder
-4. vložte kód dekodéru [Decoder.js](https://github.com/davidvasicek/LPPplus/blob/master/decoder.js)
-5. do Payload vložte testovací posloupnost bytů (např. 01 89 07 9A 87 02 C5 68 00 67 84 05 00 00 5D 2D 8D 0B)
-6. stiskněte Test
-7. sledujte výsledek
+1. Ve vaší aplikaci přejděte do Payload Formats.
+2. V Payload Format zvolte Custom.
+3. Zvolte decoder.
+4. Vložte kód dekodéru [Decoder.js](https://github.com/davidvasicek/LPPplus/blob/master/decoder.js).
+5. Do Payload vložte testovací posloupnost bytů (např. 01 89 07 9A 87 02 C5 68 00 67 84 05 00 00 5D 2D 8D 0B).
+6. Stiskněte Test.
+7. Sledujte výsledek.
 
 ![alt text](https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png "Logo Title Text 1")
 
-| Tables                        | Cool  |
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+### kodér (knihovna CayenneLPP+)
 
+Knihovna LPP+ je rozšíření knihovny CayenneLPP od The Things Network a implementuje do této knihovny nové senzory. Knihovna je psana v jazyce C. Při použití knihovny doporučujeme zkontrolovat aktuální verze knihovny, která se stále vyvíjí.
 
+##### implementace knihovny
+
+1. Stáhněte knihovnu kliknutím na Clone or download -> Download ZIP.
+2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> LPPplus-master.zip
+3. Použíjte knihovnu
+```javascript
+
+#include <CayenneLPP.h>
+CayenneLPP lpp(80);
+
+lpp.reset();
+lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp); //add the temperature into channel 1
+
+LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
+```
