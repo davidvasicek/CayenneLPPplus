@@ -169,7 +169,7 @@ Tento projekt vytváří nový dekodér takového zatížení a rozšířenou kn
 </table>
 
 
-#### Decoder
+### Decoder
 
 Dekoder LPP packetu je kód v jazyce Javascript a je implementovatelný do [The Things Network](https://www.thethingsnetwork.org/) (TTN). Jeho úkolem je dekódování užitečného zatížení zakodováného knihovnou CayenneLPP.
 
@@ -185,9 +185,11 @@ Dekoder LPP packetu je kód v jazyce Javascript a je implementovatelný do [The 
 
 ![alt text](https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png "Logo Title Text 1")
 
-### kodér (knihovna CayenneLPP+)
+### Coder (knihovna CayenneLPP+)
 
-Knihovna LPP+ je rozšíření knihovny CayenneLPP od The Things Network a implementuje do této knihovny nové senzory. Knihovna je psana v jazyce C. Při použití knihovny doporučujeme zkontrolovat aktuální verze knihovny, která se stále vyvíjí.
+Knihovna LPP+ je rozšíření knihovny CayenneLPP od The Things Network a implementuje do této knihovny nové senzory. Knihovna je psaná v jazyce C. 
+
+Při použití knihovny doporučujeme zkontrolovat aktuální verzi knihovny, která se stále vyvíjí.
 
 ##### metody knihovny
 
@@ -212,13 +214,13 @@ uint8_t addGPS+(uint8_t channel, float latitude, float longitude, float meters, 
 1. Stáhněte knihovnu kliknutím na Clone or download -> Download ZIP.
 2. Přejděte do prostředí Arduino IDE a zvolte Projekt -> Přidat knihovnu -> Přidat .ZIP knihovnu... -> LPPplus-master.zip
 3. Použíjte knihovnu
-  ```c
+    ```c
 
-  #include <CayenneLPP.h>
-  CayenneLPP lpp(80);
+      #include <CayenneLPP.h>
+      CayenneLPP lpp(80);
 
-  lpp.reset();
-  lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
+      lpp.reset();
+      lpp.addGPS+(1, Latitude, Longitude, Altitude, Satelittess, Speed, TimeStamp);
 
-  LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
+      LMIC_setTxData2(1,lpp.getBuffer(), lpp.getSize(), 0);  
   ```
