@@ -183,9 +183,9 @@ Dekoder LPP packetu je kód v jazyce Javascript implementovatelný do [The Thing
 6.
 7.
 
-![decoder implement][https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png]
 
 
+[alt text](https://github.com/davidvasicek/LPPplus/blob/master/img/decoder_implement.png "Logo Title Text 1")
 
 
 Dekoder LPP packetu (JS) a nové rozšířené knihovny pro zakodování obsahu do LPP formátu. 
