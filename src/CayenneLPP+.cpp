@@ -40,6 +40,46 @@ uint8_t CayenneLPP::copy(uint8_t *dst)
   return cursor;
 }
 
+/*
+*  Funkce pro převod data a času do epochtime formátu
+*  volání funkce: convertToEpochtime(day, month, year, hour, minutes, seconds);
+*/
+uint32_t CayenneLPP::convertToEpochtime(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minutes, uint8_t seconds){
+
+    uint32_t epochtime = 0;
+
+    int daysInMonths[] = {31 ,28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int daysInMonths_leapYear[] = {31 ,29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if(day > 0 && month > 0 && year > 0){ // den, měsíc a rok musí být větší nule
+        
+        for(int i = 1970; i < year ; i++){ // cyklus for spočítá počet sekund za již uplynulé celé roky od roku 1970
+  
+          if(i % 4 == 0){
+              epochtime += 366 * 86400;
+          }else{
+              epochtime += 365 * 86400;
+          }
+        }
+  
+        for(int i = 0; i < month -1; i++){ // cyklus for spočítá počet sekund za již uplynulé celé měsíce aktuálního roku
+        
+          if(i % 4 == 0){
+              epochtime += daysInMonths_leapYear[i] * 86400; 
+          }else{
+              epochtime += daysInMonths[i] * 86400; 
+          }
+        }
+  
+      epochtime += (day-1) * 86400;  // připočte se počet sekund za uplynulé dny v aktuálním měsíci      
+      epochtime += hour * (unsigned long)3600; // připočte se počet sekund za uplynulé hodiny v aktuálním dni 
+      epochtime += minutes * 60; // připočte se počet sekund za uplynulé minuty v aktuální hodině
+      epochtime += seconds; // připočte se počet uběhlých sekund
+    }
+        
+    return epochtime;
+}
+
 uint8_t CayenneLPP::addDigitalInput(uint8_t channel, uint8_t value)
 {
   if ((cursor + LPP_DIGITAL_INPUT_SIZE) > maxsize)
@@ -256,21 +296,6 @@ uint8_t CayenneLPP::addGPS(uint8_t channel, float latitude, float longitude, flo
   return cursor;
 }
 
-
-uint8_t CayenneLPP::addSoilMoisture(uint8_t channel, float sm)
-{
-  if ((cursor + LPP_SOIL_MOISTURE_SIZE) > maxsize)
-  {
-    return 0;
-  }
-  buffer[cursor++] = channel;
-  buffer[cursor++] = LPP_SOIL_MOISTURE;
-  buffer[cursor++] = sm * 2;
-
-  return cursor;
-}
-
-
 uint8_t CayenneLPP::addGPSplus(uint8_t channel, float latitude, float longitude, float altitude, uint8_t satellites, uint16_t speed, long timestamp)
 {
   if ((cursor + LPP_GPS_PLUS_SIZE) > maxsize)
@@ -304,6 +329,19 @@ uint8_t CayenneLPP::addGPSplus(uint8_t channel, float latitude, float longitude,
   return cursor;
 }
 
+uint8_t CayenneLPP::addSoilMoisture(uint8_t channel, float sm)
+{
+  if ((cursor + LPP_SOIL_MOISTURE_SIZE) > maxsize)
+  {
+    return 0;
+  }
+  buffer[cursor++] = channel;
+  buffer[cursor++] = LPP_SOIL_MOISTURE;
+  buffer[cursor++] = sm * 2;
+
+  return cursor;
+}
+
 uint8_t CayenneLPP::addDustDensity(uint8_t channel, float dd)
 {
   if ((cursor + LPP_DUST_DENSITY_SIZE) > maxsize)
@@ -320,45 +358,6 @@ uint8_t CayenneLPP::addDustDensity(uint8_t channel, float dd)
   return cursor;
 }
 
-/*
-*  Funkce pro převod data a času do epochtime formátu
-*  volání funkce: convertToEpochtime(day, month, year, hour, minutes, seconds);
-*/
-uint32_t CayenneLPP::convertToEpochtime(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minutes, uint8_t seconds){
-
-    uint32_t epochtime = 0;
-
-    int daysInMonths[] = {31 ,28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int daysInMonths_leapYear[] = {31 ,29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-    if(day > 0 && month > 0 && year > 0){ // den, měsíc a rok musí být větší nule
-        
-        for(int i = 1970; i < year ; i++){ // cyklus for spočítá počet sekund za již uplynulé celé roky od roku 1970
-  
-          if(i % 4 == 0){
-              epochtime += 366 * 86400;
-          }else{
-              epochtime += 365 * 86400;
-          }
-        }
-  
-        for(int i = 0; i < month -1; i++){ // cyklus for spočítá počet sekund za již uplynulé celé měsíce aktuálního roku
-        
-          if(i % 4 == 0){
-              epochtime += daysInMonths_leapYear[i] * 86400; 
-          }else{
-              epochtime += daysInMonths[i] * 86400; 
-          }
-        }
-  
-      epochtime += (day-1) * 86400;  // připočte se počet sekund za uplynulé dny v aktuálním měsíci      
-      epochtime += hour * (unsigned long)3600; // připočte se počet sekund za uplynulé hodiny v aktuálním dni 
-      epochtime += minutes * 60; // připočte se počet sekund za uplynulé minuty v aktuální hodině
-      epochtime += seconds; // připočte se počet uběhlých sekund
-    }
-        
-    return epochtime;
-}
 
 
 
