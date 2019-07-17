@@ -24,9 +24,9 @@
 #define LPP_UNIXTIME 133            // 4 bytes, unsigned uint_32_t
 #define LPP_GYROMETER 134           // 2 bytes per axis, 0.01 °/s
 #define LPP_GPS 136                 // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
-#define LPP_GPS_PLUS 137                 // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
-#define LPP_SOIL_MOISTURE 137       // 1 byte, 0.5% unsigned
-#define LPP_DUST_DENSITY 138       // 2 byte, 0.1 ug/cm3 signed
+#define LPP_GPS_PLUS 137            // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
+#define LPP_SOIL_MOISTURE 138       // 1 byte, 0.5% unsigned
+#define LPP_DUST_DENSITY 139        // 2 byte, 0.1 ug/cm3 signed
 
 // Data ID + Data Type + Data Size
 #define LPP_DIGITAL_INPUT_SIZE 3       // 1 byte
@@ -42,8 +42,8 @@
 #define LPP_UNIXTIME_SIZE 6 		// 4 bytes, unsigned uint_32_t
 #define LPP_GYROMETER_SIZE 8           // 2 bytes per axis, 0.01 °/s
 #define LPP_GPS_SIZE 11                // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
-#define LPP_GPS_PLUS_SIZE 20                // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
-#define LPP_SOIL_MOISTURE_SIZE 3        // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter
+#define LPP_GPS_PLUS_SIZE 18            // 3 byte lon/lat 0.0001 °, 3 bytes alt 0.01 meter TODO
+#define LPP_SOIL_MOISTURE_SIZE 3        // 1 byte, 0.5% unsigned
 #define LPP_DUST_DENSITY_SIZE 4        // 2 byte, 0.1 ug/cm3 signed
 
 class CayenneLPP
