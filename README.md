@@ -6,8 +6,10 @@ Tento projekt vytváří nový dekodér takového zatížení a rozšířenou kn
 
 #### Změny ve verzích
 
-  v1.0.0 - 16.7.2019 - přidána rozšířená GPS (HEX = 89)
-                   - přidán senzor vlhkosti půdy (HEX = 87)
+v1.0.0 - 16.7.2019 
+- přidána rozšířená GPS (HEX = 89)
+- přidán senzor vlhkosti půdy (HEX = 8A)
+- přidán senzor prašnosti (HEX = 8B)
 
 #### Rozšířená tabulka
 
