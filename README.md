@@ -193,6 +193,7 @@ Při použití knihovny doporučujeme zkontrolovat aktuální verzi knihovny, kt
 
 ##### metody knihovny
 
+##### Metody add...
 ```c
 uint8_t addDigitalInput(uint8_t channel, uint8_t value);
 uint8_t addDigitalOutput(uint8_t channel, uint8_t value);
@@ -208,6 +209,9 @@ uint8_t addGyrometer(uint8_t channel, float x, float y, float z);
 uint8_t addGPS(uint8_t channel, float latitude, float longitude, float meters);
 uint8_t addGPSplus(uint8_t channel, float latitude, float longitude, float meters, int satellites, float speed, long timestamp);
 ```
+
+##### Metoda convertToEpochtime
+Metoda vrací hodnotu epochtime/unixtime (tj. převedené aktuální datum a čas na počet sekund od 1.1.1970 00:00:00 hod)
 
 ##### implementace knihovny
 
