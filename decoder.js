@@ -80,6 +80,8 @@ function Decoder(bytes, port) {
     *                                                          Satellites : 1 satelite Unsigned (1Byte)
     *                                                          Speed : 0.01 meter Unsigned (2Byte)
     *                                                          TimeStamp : 1 ms Unsigned (4Byte)
+    *  Soil Moisture     ????      138     8A      1           0.5 % Unsigned
+    *  Dust Density      ????      139     8B      2           0.1 ug/cm3 signed
     */
   
   // LPP tabulka v JSON tvaru
@@ -96,8 +98,10 @@ function Decoder(bytes, port) {
     115: {'size': 2  , 'name': 'Barometer'          , 'signed': false , 'resolution': 0.1                             },
     133: {'size': 4  , 'name': 'UnixTime'           , 'signed': true  , 'resolution': 0.01                            },
     134: {'size': 6  , 'name': 'Gyrometer'          , 'signed': true  , 'resolution': 0.01                            },
-    136: {'size': 9  , 'name': 'gps'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01]          },
-    137: {'size': 16 , 'name': 'gps'       , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01, 1, 1, 1] }
+    136: {'size': 9  , 'name': 'gps'                , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01]          },
+    137: {'size': 16 , 'name': 'gps'                , 'signed': false , 'resolution': [0.0001, 0.0001, 0.01, 1, 1, 1] },
+    138: {'size': 1  , 'name': 'Soil Moisture'      , 'signed': false , 'resolution': 0.5                             },
+    139: {'size': 2  , 'name': 'Dust Density'       , 'signed': true ,  'resolution': 0.1                             }
   };
   
   // Bude pročítat celý payload byte po byte, dokud nenarazí na konec 
@@ -167,6 +171,7 @@ function Decoder(bytes, port) {
                   break;
 
       case 138 :  addToPayload(sensorName, dataResolution, getDecimalNumberFromBytes(dataSigned, dataSize)); break;  // Soil Moisture
+      case 139 :  addToPayload(sensorName, dataResolution, getDecimalNumberFromBytes(dataSigned, dataSize)); break;  // Dust Density
     }
   }
       
